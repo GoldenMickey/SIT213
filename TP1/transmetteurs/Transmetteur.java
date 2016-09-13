@@ -24,12 +24,12 @@ public abstract  class Transmetteur <R,E> implements  DestinationInterface <R>, 
     /** 
      * l'information reçue en entrée du transmetteur 
      */
-    protected Information <R>  informationRecue;
+    protected Information <R> informationRecue;
 		
     /** 
      * l'information émise en sortie du transmetteur
      */		
-    protected Information <E>  informationEmise;
+    protected Information <E> informationEmise;
    
     /** 
      * un constructeur factorisant les initialisations communes aux

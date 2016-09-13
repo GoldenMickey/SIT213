@@ -64,7 +64,10 @@ public class Simulateur {
 
       	// A compléter
         Boolean[] data = {true, false, false, true};
-        this.source = new SourceFixe<Boolean>(data);
+        // if(messageAleatoire == false)
+        //   this.source = new SourceFixe<Boolean>(messageString);
+        this.transmetteurLogique = new TransmetteurParfait();
+        this.destination = new DestinationFinale <Boolean>();
     }
 
 
@@ -139,8 +142,10 @@ public class Simulateur {
      */ 
     public void execute() throws Exception {      
 
-	   source.emettre();
-       System.out.println(source.getInformationEmise());
+      source.connecter(transmetteurLogique);
+      transmetteurLogique.connecter(destination);
+      source.emettre();
+      System.out.println("Destination" + destination.getInformationRecue());
 
     }
 
